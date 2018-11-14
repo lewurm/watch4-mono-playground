@@ -112,6 +112,7 @@
 		D02F86EE219C71EB00512DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D02F86F0219C71EB00512DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D02F86F1219C71EB00512DBD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		D02F8706219C86B800512DBD /* libmonosgen-2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libmonosgen-2.0.a"; path = "../../work/mono-watch4/sdks/builds/ios-targetwatch4-release/mono/mini/.libs/libmonosgen-2.0.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +156,7 @@
 				D02F86D5219C71E900512DBD /* watch4 WatchKit App */,
 				D02F86E4219C71EA00512DBD /* watch4 WatchKit Extension */,
 				D02F86A6219C71E800512DBD /* Products */,
+				D02F8705219C86B700512DBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,6 +230,14 @@
 				D02F86F1219C71EB00512DBD /* PushNotificationPayload.apns */,
 			);
 			path = "watch4 WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		D02F8705219C86B700512DBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D02F8706219C86B800512DBD /* libmonosgen-2.0.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -630,11 +640,16 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"/Users/lewurm/work/mono-watch4/sdks/builds/ios-targetwatch4-release/mono/mini/.libs/libmonosgen-2.0.a",
+					"-liconv",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xamarin.watch4.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
+				VALID_ARCHS = arm64_32;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Debug;
@@ -651,11 +666,16 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"/Users/lewurm/work/mono-watch4/sdks/builds/ios-targetwatch4-release/mono/mini/.libs/libmonosgen-2.0.a",
+					"-liconv",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xamarin.watch4.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
+				VALID_ARCHS = arm64_32;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Release;

@@ -7,7 +7,7 @@
 //
 
 #import "InterfaceController.h"
-
+void *mono_jit_init_version      (const char *root_domain_name, const char *runtime_version);
 
 @interface InterfaceController ()
 
@@ -25,6 +25,7 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    mono_jit_init_version ("Mono.ios", "mobile");
 }
 
 - (void)didDeactivate {
